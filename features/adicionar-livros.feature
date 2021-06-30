@@ -28,5 +28,5 @@ Scenario: cadastrar livro com numero de exemplares negativo falha
 
 Scenario: cadastrar livro sem isbn falha
 	When cadastrar livro com titulo: [], autores: [], data publicação: [], cdu: [], tags: [], numero exemplares: []
-	Then receber status “400: Bad Request”, mensagem: “Isbn requerido.”
+	Then receber status “400: Bad Request”, mensagem: “ISBN requerido.”
 
