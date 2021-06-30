@@ -5,9 +5,6 @@ const port = 3000
 
 const { Book } = require('./models');
 
-//Book.create({ isbn: 289102, title: 'cHamlet', copies: 5 });
-
-
 app.get('/books', (req, res) => {
   Book.findAll().then(books => {
     res.send(books)
