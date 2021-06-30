@@ -32,7 +32,7 @@ Feature: Adicionar livro
 	  Then existe livro com isbn 8535909559
 	
 	Scenario: cadastrar livro existente
-	  Given não existe livro com isbn 8535909559
+	  Given existe livro com isbn 8535909559
 	  When cadastrar livro
 	  """
 	  {
