@@ -1,17 +1,11 @@
 {
-  "name": "little-library",
-  "version": "1.0.0",
-  "description": "little library",
-  "main": "index.js",
+  "name": "little-library-tests",
+  "description": "tests to little library",
+  "author": "bcs5",
+  "homepage": "https://github.com/bcs5/little-library#readme",
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js src/features/ -r src/steps"
+    "test": "./node_modules/.bin/cucumber-js features -r steps"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/bcs5/little-library.git"
-  },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/bcs5/little-library/issues"
   },
@@ -21,6 +15,5 @@
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.0",
     "cucumber-html-reporter": "^5.4.0"
-  },
-  "homepage": "https://github.com/bcs5/little-library#readme"
+  }
 }
