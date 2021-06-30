@@ -2,7 +2,7 @@
   "name": "little-library",
   "version": "1.0.0",
   "description": "little library",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "npm --prefix tests-acceptance run test"
   },
