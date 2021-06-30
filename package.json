@@ -1,0 +1,22 @@
+{
+  "name": "little-library",
+  "version": "1.0.0",
+  "description": "little library",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm --prefix tests-acceptance run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcs5/little-library.git"
+  },
+  "author": "bcs5",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcs5/little-library/issues"
+  },
+  "homepage": "https://github.com/bcs5/little-library#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
