@@ -9,10 +9,18 @@ When('cadastrar livro', function (book) {
   return 'pending';
 });
 
+When('modificar livro', function (book) {
+  return 'pending';
+});
+
 Then('receber status {}, mensagem: {}', function (code, msg) {
    return 'pending';
 });
 
 Then('existe livro com isbn {}', function (isbn) {
+  return 'pending';
+});
+
+Then('livro com isbn {} tem', function (isbn, properties) {
   return 'pending';
 });
