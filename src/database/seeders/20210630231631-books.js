@@ -17,6 +17,11 @@ module.exports = {
         isbn: 8576572710,
         title: 'Eu Sou a Lenda',
         copies: 2
+      },
+      {
+        isbn: 8535909559,
+        title: 'A revolução dos bichos: Um conto de fadas',
+        copies: 9
       }
     ], {});
   },
