@@ -1,64 +1,79 @@
 const { Book } = require('../models');
 
-exports.create = (req, res) => {
+var required_fields = ["isbn", "titulo", "numero_exemplares"]
+var implemented_fiedls = required_fields + []
+
+function RequiredFieldException (message) {
+  this.message = message;
+  this.name = 'RequiredFieldException';
+}
+
+exports.create = async (req, res) => {
   try {
-    Book.create(req.body).then(book => {
-      res.status(201).json({ book: book });
-    });
+    required_fields.map(field => {
+      if (!req.body.hasOwnProperty(field)) {
+        throw new RequiredFieldException('sem ' + field);
+      }
+    })
+    
+    const book = await Book.create(req.body);
+    return res.status(201).send("livro criado.");
   } catch (error) {
-    return res.status(500).error("Falha ao criar.")
+    if (error instanceof RequiredFieldException) {
+      return res.status(400).send(error.message);
+    }
+    return res.status(500).send(error.message);
   }
 }
 
-
-exports.findAll = (req, res) => {
-  Book.findAll().then(books => {
-    res.send(books)
-  })
+exports.findAll = async (req, res) => {
+  try {
+    const books = await Book.findAll()
+    return res.status(200).json({ books })
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
 }
 
-exports.findOne = (req, res) => {
-  Book.findByPk(req.params.id).then(book => {
-    if (book == null) {
-      res.status(404).send("Não encontrado.")
-    } else {
-      res.send(book)
-    }
-  }).catch(() => {
-    res.status(500).send("Falha ao buscar.")
-  })
-}
-
-exports.update = (req, res) => {
+exports.findOne = async (req, res) => {
   try {
     const { id } = req.params;
-    const updated = Book.update(req.body, {
-      where: {isbn: id }
-    }).then(res => res.updated)
-    if (updated) {
-      Book.findOne({ where: { isbn: id } }).then(book => {
-        res.status(200).json({ book: book })
-      });
-    } else {
-      res.status(404).send("Não encontrado.")
+    const book = await Book.findByPk(id);
+    if(book) {
+      return res.status(200).json({ book });
     }
+    return res.status(404).send("não encontrado.")
   } catch (error) {
-    return res.status(500).send("Falha ao atualizar.");
+    return res.status(500).send(error.message)
   }
 }
 
-
-exports.delete = (req, res) => {
-  Book.findByPk(req.params.id).then(book => {
-    if (book == null) {
-      res.status(404).send("Não encontrado.")
-    } else {
-      res.send(book)
+exports.update = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updated = await Book.update(req.body, {
+      where: {isbn: id }
+    })
+    if (updated > 0) {
+      return res.status(200).send("atualizado.")
     }
-  }).catch(() => {
-    res.status(500).send("Falha ao buscar.")
-  })
+    return res.status(404).send("não encontrado.")
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
 }
 
-
-
+exports.delete = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await Book.destroy({
+      where: {isbn: id }
+    })
+    if (deleted) {
+      return res.status(204).send("deletado.")
+    }
+    return res.status(404).send("não encontrado.")
+  } catch(error) {
+    return res.status(500).send(error.message)
+  }
+}
