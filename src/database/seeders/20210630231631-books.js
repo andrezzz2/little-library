@@ -5,23 +5,23 @@ module.exports = {
     return queryInterface.bulkInsert('Books', [
       {
         isbn: 8594318600,
-        title: 'Dom Casmurro',
-        copies: 4
+        titulo: 'Dom Casmurro',
+        numero_exemplares: 4
       },
       {
         isbn: 8576572001,
-        title: 'Eu, Robô',
-        copies: 5
+        titulo: 'Eu, Robô',
+        numero_exemplares: 5
       },
       {
         isbn: 8576572710,
-        title: 'Eu Sou a Lenda',
-        copies: 2
+        titulo: 'Eu Sou a Lenda',
+        numero_exemplares: 2
       },
       {
         isbn: 8535909559,
-        title: 'A revolução dos bichos: Um conto de fadas',
-        copies: 9
+        titulo: 'A revolução dos bichos: Um conto de fadas',
+        numero_exemplares: 9
       }
     ], {});
   },
