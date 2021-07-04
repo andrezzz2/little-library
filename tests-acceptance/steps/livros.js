@@ -57,7 +57,10 @@ Then('não deveria existir livro com isbn {}', function (isbn) {
   pactum.spec().get(getUrl("book/" + isbn)).expectStatus(404);
 });
 
-Then('deveria existir livro com campos', function (data) {
-  var book = JSON.parse(data)
-  pactum.spec().get(getUrl("book/" + book.isbn)).expectStatus(200);
+Then('deveria existir livro com campos', async function (data) {
+  var book = {"book": JSON.parse(data)}
+  var spec = pactum.spec()
+  await spec.get(getUrl("book/" + book.book.isbn)).toss()
+  spec.response().should.have.status(200);
+  spec.response().should.have.jsonLike(book);
 });
