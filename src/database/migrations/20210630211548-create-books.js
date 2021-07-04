@@ -8,11 +8,11 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      title: {
+      titulo: {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      copies: {
+      numero_exemplares: {
         allowNull: false,
         type: DataTypes.INTEGER,
       }
