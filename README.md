@@ -26,6 +26,6 @@ This must seed the databse.
 
 Run the node server on localhost:3000.
 
-http://localhost:3000/books
+http://localhost:3000/book
 
 To see inserted books.
