@@ -1,26 +1,63 @@
-const {Given, When, Then} = require('@cucumber/cucumber')
+const {Given, When, Then, Before} = require('@cucumber/cucumber')
+const pactum = require('pactum')
 const assert = require('assert').strict
 
-Given('não existe livro com isbn {}', function (isbn) {
-  return 'pending';
+let spec = pactum.spec()
+
+Before(async () => {
+  spec = pactum.spec();
 });
 
-When('cadastrar livro', function (book) {
-  return 'pending';
+function getUrl(path) {
+  return "http://localhost:3000/" + path
+}
+
+Given('existe livro com isbn {}', async function (isbn) {
+  await pactum.spec().delete(getUrl("book/" + isbn)).toss()
+  await pactum.spec().post(getUrl("book/"))
+    .withJson({
+      isbn: isbn,
+      titulo: 'alice no pais das maravilhas',
+      numero_exemplares: 1
+    })
+    .expectStatus(201);
 });
 
-When('modificar livro', function (book) {
-  return 'pending';
+Given('não existe livro com isbn {}', async function (isbn) {
+  var response = await pactum.spec().delete(getUrl("book/" + isbn)).toss()
+  if([204, 404].includes(response.statusCode)) {
+    return 'success'
+  }
+  console.log(response.statusCode)
+  return 'pending'
 });
 
-Then('receber status {}, mensagem: {}', function (code, msg) {
-   return 'pending';
+When('cadastrar livro', async function (data) {
+  var book = JSON.parse(data)
+  await spec.post(getUrl("book/"))
+    .withJson(book)
+    .toss();
 });
 
-Then('existe livro com isbn {}', function (isbn) {
-  return 'pending';
+When('modificar livro com isbn {}', async function (isbn, data) {
+  var book = JSON.parse(data)
+  await spec.put(getUrl("book/" + isbn))
+    .withJson(book).toss();
 });
 
-Then('livro com isbn {} tem', function (isbn, properties) {
-  return 'pending';
+Then('deveria receber status {int}', function (code) {
+  spec.response().should.have.status(code);
+});
+
+Then('deveria existir livro com isbn {}', function (isbn) {
+  pactum.spec().get(getUrl("book/" + isbn)).expectStatus(200);
+});
+
+Then('não deveria existir livro com isbn {}', function (isbn) {
+  pactum.spec().get(getUrl("book/" + isbn)).expectStatus(404);
+});
+
+Then('deveria existir livro com campos', function (data) {
+  var book = JSON.parse(data)
+  pactum.spec().get(getUrl("book/" + book.isbn)).expectStatus(200);
 });

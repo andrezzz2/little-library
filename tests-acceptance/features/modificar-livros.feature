@@ -5,29 +5,27 @@ Feature: Modificar livro
   
   Scenario: modificar livro existente
     Given existe livro com isbn 8535909559
-    When modificar livro
+    When modificar livro com isbn 8535909559
+    """
+    {
+      "numero_exemplares": 8
+    }
+    """
+    Then deveria existir livro com campos
     """
     {
       "isbn": 8535909559,
       "numero_exemplares": 8
-    }
-    """
-    Then existe livro com isbn 8535909559
-    Then livro com isbn 8535909559 tem
-    """
-    {
-        "numero_exemplares": 8
     }
     """
   
   Scenario: modificar livro não existente
     Given não existe livro com isbn 8535909559
-    When modificar livro
+    When modificar livro com isbn 8535909559
     """
     {
-      "isbn": 8535909559,
       "numero_exemplares": 8
     }
     """
-    Then receber status 400, mensagem: "Não existe livro com o isbn informado.”
-    Then não existe livro com isbn 8535909559
+    Then deveria receber status 404
+    Then não deveria existir livro com isbn 8535909559

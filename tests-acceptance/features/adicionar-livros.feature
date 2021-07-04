@@ -14,7 +14,7 @@ Feature: Adicionar livro
       "numero_exemplares": 9
     }
     """
-    Then receber status 400, mensagem: "Título requerido.”
+    Then deveria receber status 400
 
   Scenario: cadastrar livro sucesso
     Given não existe livro com isbn 8535909559
@@ -22,14 +22,14 @@ Feature: Adicionar livro
     """
     {
       "isbn": 8535909559,
-      "título": "A revolução dos bichos: Um conto de fadas",
+      "titulo": "A revolução dos bichos: Um conto de fadas",
       "autores": ["George Orwell"],
       "cdu": "821.111",
       "numero_exemplares": 9
     }
     """
-    Then receber status 200, mensagem: “Livro registrado.”
-    Then existe livro com isbn 8535909559
+    Then deveria receber status 201
+    Then deveria existir livro com isbn 8535909559
   
   Scenario: cadastrar livro existente
     Given existe livro com isbn 8535909559
@@ -37,11 +37,11 @@ Feature: Adicionar livro
     """
     {
       "isbn": 8535909559,
-      "título": "A revolução dos bichos: Um conto de fadas",
+      "titulo": "A revolução dos bichos: Um conto de fadas",
       "autores": ["George Orwell"],
       "cdu": "821.111",
       "numero_exemplares": 9
     }
     """
-    Then receber status 400, mensagem: “Existe um livro com esse isbn.”
-    Then existe livro com isbn 8535909559
+    Then deveria receber status 500
+    Then deveria existir livro com isbn 8535909559
