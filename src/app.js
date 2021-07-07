@@ -1,13 +1,19 @@
-const express = require('express')
-const bodyParser = require('body-parser');
+const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express()
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.urlencoded());
+app.use(express.json()); 
+app.use(cookieParser());
+
+const sequelize = require('./models/index.js');
+sequelize.sync({ force: true}).then(); 
 
 const port = 3000
 
+require("./routes/index.routes")(app)
 require("./routes/book.routes")(app)
+require("./routes/home.routes")(app)
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+  console.log("app is running on http://localhost:",port);
+});

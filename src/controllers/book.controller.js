@@ -1,4 +1,5 @@
-const { Book } = require('../models');
+const Book  = require('../models/book.js');
+const User = require('../models/user.js');
 
 var required_fields = ["isbn", "titulo", "numero_exemplares"]
 var implemented_fiedls = required_fields + []

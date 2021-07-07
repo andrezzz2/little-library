@@ -1,12 +1,14 @@
-module.exports = (sequelize, DataTypes) => {
-  const Book = sequelize.define('Book', {
-    isbn: {type: DataTypes.INTEGER, primaryKey: true},
-    titulo: DataTypes.STRING,
-    numero_exemplares: DataTypes.INTEGER
-  }, {
-    timestamps: false,
-    
-  });
+const { DataTypes } = require('sequelize');
+const sequelize = require('./');
 
-  return Book;
-}
+const Book = sequelize.define('Book', {
+  isbn: {type: DataTypes.INTEGER, primaryKey: true},
+  titulo: {type:DataTypes.STRING},
+  numero_exemplares: {type:DataTypes.INTEGER}
+}, {
+  sequelize,
+  timestamps: false,
+  
+});
+
+module.exports = Book;
