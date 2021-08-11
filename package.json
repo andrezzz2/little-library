@@ -4,6 +4,7 @@
   "description": "little library",
   "main": "src/app.js",
   "scripts": {
+    "start": "node src/app.js",
     "test": "npm --prefix tests-acceptance run test"
   },
   "repository": {
