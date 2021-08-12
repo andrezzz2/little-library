@@ -3,6 +3,6 @@ module.exports = app => {
     const home = require("../controllers/home.controller.js");
     var router = require("express").Router();
     router.get('/', home.getPage);
-    router.get('/js/homepage.js', home.getJsPage);
+    router.get('/homepage.js', home.getJsPage);
     app.use('/home', authenticate, router);
 }
