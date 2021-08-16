@@ -17,6 +17,7 @@ module.exports = (req, res, next) => {
             User.findByPk(payload.email).then(user => {        
                 if(user == null) {    //se tem token mas email esta errado, redireciona pra pagina inicial
                     res.clearCookie('token', { path: '/' })
+                    res.clearCookie('username', { path: '/' })
                     return res.status(201).send("<head><meta http-equiv='refresh' content='0;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Redirecting...</body>");
                 }else{                                //se tem token e email certo, da acesso
                     return next();
