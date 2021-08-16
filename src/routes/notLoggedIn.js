@@ -19,7 +19,7 @@ module.exports = (req, res, next) => {
                 }else{                                //se existe o email, redireciona pra homepage
                     //res.status(200).sendFile(path.join(__dirname + '/../pages/homepage.html'));
                     //res.redirect(200, '/home');
-                    res.status(201).send("<head><meta http-equiv='refresh' content='0;url=http://localhost:3000/home'/><title>Redirect Page</title></head><body>Redirecting...</body>");
+                    res.status(201).send("<head><meta http-equiv='refresh' content='0;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Redirecting...</body>");
                 }  
             }).catch(() => {
                 res.status(500).send("Falha ao buscar.");

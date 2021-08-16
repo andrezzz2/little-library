@@ -11,8 +11,10 @@ sequelize.sync({ force: true}).then();
 const port = 3000
 
 require("./routes/index.routes")(app)
+require("./routes/login.routes")(app)
+require("./routes/register.routes")(app)
+
 require("./routes/book.routes")(app)
-require("./routes/home.routes")(app)
 
 app.listen(port, () => {
   console.log("app is running on http://localhost:",port);
