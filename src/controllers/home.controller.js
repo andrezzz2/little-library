@@ -1,5 +1,3 @@
-const User = require('../models/user.js');
-const Book = require('../models/book.js');
 const path = require('path');
 
 exports.getPage = (req, res) => {
@@ -8,4 +6,24 @@ exports.getPage = (req, res) => {
 
 exports.getJsPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/js/homepage.js'));
+}
+
+exports.getCssPage = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/css/style_homepage.css'));
+}
+
+exports.getImgPage = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/img/fundo.jpg'));
+}
+
+exports.getImgPage2 = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/img/aquisicoes.png'));
+}
+
+exports.getImgPage3 = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/img/evento.jpeg'));
+}
+
+exports.getImgPage4 = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/img/leituraInfantil.jpg'));
 }

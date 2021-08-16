@@ -13,7 +13,23 @@ exports.getJsPage = (req, res) => {
 }
 
 exports.getCssPage = (req, res) => {
-    res.sendFile(path.join(__dirname + '/../pages/css/style.css'));
+    res.sendFile(path.join(__dirname + '/../pages/css/style_index.css'));
+}
+
+exports.getImgPage = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/img/fundo.jpg'));
+}
+
+exports.getImgPage2 = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/img/aquisicoes.png'));
+}
+
+exports.getImgPage3 = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/img/evento.jpeg'));
+}
+
+exports.getImgPage4 = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/img/leituraInfantil.jpg'));
 }
 
 exports.login = (req, res) => {
@@ -45,7 +61,7 @@ exports.getJsLoginPage = (req, res) => {
 }
 
 exports.getCssLoginPage = (req, res) => {
-    res.sendFile(path.join(__dirname + '/../pages/css/style.css'));
+    res.sendFile(path.join(__dirname + '/../pages/css/style2.css'));
 }
 
 exports.register = (req, res) => {
@@ -57,7 +73,7 @@ exports.register = (req, res) => {
             }else{
                 if(req.body.password.length >= 8){
                     User.create(req.body).then(user => {  
-                        res.status(201).send("<head><meta http-equiv='refresh' content='2;url=/'/><title>Redirect Page</title></head><body>Cadastro feito com sucesso!</body>");
+                        res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Cadastro feito com sucesso!</body>");
                     });
                 }
                 else{
@@ -79,5 +95,5 @@ exports.getJsRegisterPage = (req, res) => {
 }
 
 exports.getCssRegisterPage = (req, res) => {
-    res.sendFile(path.join(__dirname + '/../pages/css/style.css'));
+    res.sendFile(path.join(__dirname + '/../pages/css/style2.css'));
 }

@@ -7,14 +7,16 @@ module.exports = (req, res, next) => {
     const token = req.cookies.token;
 
     if (token == null){    //se nao tem token, redireciona pra pagina inicial
-        return res.status(401).sendFile(path.join(__dirname + '/../pages/index.html'));
+        return res.status(201).send("<head><meta http-equiv='refresh' content='0;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Redirecting...</body>");
     } 
     else{
         jwt.verify(token, ACCESS_TOKEN_SECRET, (err, payload) => {
-            if(err) return res.status(403);
+            if(err){
+                return res.status(403);
+            } 
             User.findByPk(payload.email).then(user => {        
                 if(user == null) {    //se tem token mas email esta errado, redireciona pra pagina inicial
-                    res.status(401).sendFile(path.join(__dirname + '/../pages/index.html'));
+                    return res.status(201).send("<head><meta http-equiv='refresh' content='0;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Redirecting...</body>");
                 }else{                                //se tem token e email certo, da acesso
                     return next();
                 }  
