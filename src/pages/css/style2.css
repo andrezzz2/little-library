@@ -14,6 +14,7 @@ div{
 }
 input{
     padding: 15px;
+    margin-bottom: 10px;
     border: none;
     outline: none;
     font-size: 15px;
