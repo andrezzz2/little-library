@@ -5,6 +5,11 @@
 
 /*CSS pela tag*/
 
+body{
+    background-image: linear-gradient( #000938, #494949);
+    max-width: 100%;
+}
+
 a{
     text-decoration: none;
 }
@@ -43,6 +48,7 @@ p{
 
 footer{
     background-color: #1c1c1c;
+    margin-top: 20px;
 }
 
 footer h5{
@@ -65,10 +71,6 @@ h5{
 }
 
 #search-field{
-    background-image: url("../img/fundo.jpg");
-    background-position: center;
-    background-size: 100%;
-    height:730px;
     padding: 200px 120px 0 120px;
 }
 
