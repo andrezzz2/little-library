@@ -69,6 +69,10 @@ footer h5{
     padding: 10px;
 }
 
+.dropdown button{
+    margin-right: 170px;
+}
+
 /*CSS pelo id*/
 
 #header{
