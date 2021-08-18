@@ -4,12 +4,21 @@
         <meta charset="UTF-8">
         <link href="/register/style2.css" rel="stylesheet">
         <title>Register</title>
-        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     </head>
     <body>
-        <div class="register"></div>
-        <script type="text/babel" src="/register/register.js"></script>   
+        <div>
+        <form action="/register" method="post">
+            
+            <h1>Cadastro</h1>
+            <input type="text" placeholder="Username" id="username" name="username"/>
+            <br></br>
+            <input type="email" placeholder="E-mail" id="email" name="email"/>
+            <br></br>
+            <input type="password" placeholder="Password" id="password" name="password"/>
+            <br></br>
+            <button type="submit">Salvar</button>
+
+        </form> 
+        </div>
     </body>
 </html>

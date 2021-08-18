@@ -27,10 +27,6 @@ exports.getRegisterPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/register.html'));
 }
 
-exports.getJsRegisterPage = (req, res) => {
-    res.sendFile(path.join(__dirname + '/../pages/js/register.js'));
-}
-
 exports.getCssRegisterPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/css/style2.css'));
 }

@@ -4,7 +4,6 @@ module.exports = app => {
     var router = require("express").Router();
 
     router.get('/', notLoggedIn, login.getLoginPage);
-    router.get('/login.js', login.getJsLoginPage);
     router.get('/style2.css', login.getCssLoginPage);
     router.post('/', login.login);
 

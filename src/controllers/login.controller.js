@@ -29,10 +29,6 @@ exports.getLoginPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/login.html'));
 }
 
-exports.getJsLoginPage = (req, res) => {
-    res.sendFile(path.join(__dirname + '/../pages/js/login.js'));
-}
-
 exports.getCssLoginPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/css/style2.css'));
 }
