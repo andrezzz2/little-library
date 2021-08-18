@@ -10,9 +10,19 @@ function Login(props) {
 
 function Welcome(props) {
     return(
-        <a>
-            <h6>Bem-vindo, {username}.</h6>
-        </a> 
+        <div class="dropdown">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user-cog"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><h6 class="dropdown-item">Logado como:<em> {username}, usuário</em></h6></li>  
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Meu Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Notificações</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sair</a></li>
+            </ul>
+        </div>
     );
 }
 //if (cookies.indexOf("username") == -1) {
