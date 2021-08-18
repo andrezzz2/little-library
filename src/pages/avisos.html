@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/avisos.css">
+    <link rel="stylesheet" type="text/css" href="/avisos/avisos.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>Avisos</title>
 </head>
 
@@ -21,17 +24,17 @@
                     <div id="navitens" class="container">
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a id="linkf" class="nav-link" href="#">
+                                <a id="linkf" class="nav-link" href="../acervo">
                                     <h6><i class="fas fa-atlas"></i> Acervo</h6>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a id="links" class="nav-link" href="#"> 
+                                <a id="links" class="nav-link" href="../groups"> 
                                     <h6><i class="fas fa-users"></i> Grupos</h6>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a id="linkt" class="nav-link" href="#">
+                                <a id="linkt" class="nav-link" href="../emprestimos">
                                     <h6><i class="fas fa-hand-holding"></i> Empréstimos</h6>
                                 </a>
                             </li>
@@ -42,7 +45,10 @@
                             </li>
                         </ul>
                     </div>   
-                    
+
+                    <div class="loginOrConfigs"></div>
+                    <script type="text/babel" src="/loginOrConfigs.js"></script>
+
                 </div>
 
             </div>

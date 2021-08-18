@@ -1,9 +1,8 @@
 module.exports = app => {
-    //const authenticated = require("./auth.js");
-    //const group = require("../controllers/group.controller.js");
-    //var router = require("express").Router();
-    //router.get('/', group.getPage);
-    //router.get('/group.js', home.getJsPage);
-    //router.get('/group.css', home.getCssPage);
-    //app.use('/group', authenticated, router);
+    const groups = require("../controllers/groups.controller.js");
+    var router = require("express").Router();
+    router.get('/', groups.getPage);
+    router.get('/groups.css', groups.getCssPage);
+
+    app.use('/groups', router);
 }
