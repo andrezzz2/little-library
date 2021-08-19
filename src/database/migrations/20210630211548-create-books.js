@@ -12,7 +12,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      numero_exemplares: {
+      numero_serie: {
         allowNull: false,
         type: DataTypes.INTEGER,
       }
