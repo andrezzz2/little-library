@@ -8,6 +8,8 @@ exports.register = (req, res) => {
             if(user != null) {   
                 res.status(401).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/register'/><title>Redirect Page</title></head><body>E-mail já cadastrado.</body>");
             }else{
+                req.body.userType = 1;
+                console.log(req.body);
                 if(req.body.password.length >= 8){
                     User.create(req.body).then(user => {  
                         res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Cadastro feito com sucesso!</body>");
