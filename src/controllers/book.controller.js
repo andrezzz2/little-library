@@ -1,7 +1,7 @@
 const Book  = require('../models/book.js');
 const User = require('../models/user.js');
 
-var required_fields = ["isbn", "titulo", "numero_exemplares"]
+var required_fields = ["isbn", "titulo", "numero_serie"]
 var implemented_fiedls = required_fields + []
 
 function RequiredFieldException (message) {

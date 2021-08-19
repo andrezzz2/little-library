@@ -3,6 +3,9 @@ module.exports = app => {
     var router = require("express").Router();
     router.get('/', acervo.getPage);
     router.get('/acervo.css', acervo.getCssPage);
+    router.get('/acervo.js', acervo.getJsPage);
+    router.get('/data.js', acervo.getJsonData);
+    router.get('/:id', acervo.getBookById);
 
     app.use('/acervo', router);
 }
