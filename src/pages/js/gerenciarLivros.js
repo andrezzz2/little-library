@@ -3,7 +3,7 @@ const cookies = document.cookie;
 function GerenciarLivros(props) {
     return(
         <li className="nav-item">
-            <a id="linkfo" className="nav-link" href="localhost:3000/gerenciarLivro">
+            <a id="linkfo" className="nav-link" href="http://localhost:3000/gerenciarLivro">
                 <h6>Genrenciar Livros<br/></h6>
             </a>
         </li>
