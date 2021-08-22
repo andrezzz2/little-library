@@ -5,6 +5,7 @@ module.exports = app => {
     router.get('/style_index.css', index.getCssPage);
 
     router.get('/loginOrConfigs.js', index.getLoginOrConfigsJs);
+    router.get('/gerenciarLivros.js', index.getGerenciarLivrosJs);
     router.get('/fundo.jpg', index.getImgPage);
     router.get('/aquisicoes.png', index.getImgPage2);
     router.get('/evento.jpeg', index.getImgPage3);

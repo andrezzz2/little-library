@@ -8,6 +8,10 @@ exports.getLoginOrConfigsJs = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/js/loginOrConfigs.js'));
 }
 
+exports.getGerenciarLivrosJs = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/js/gerenciarLivros.js'));
+}
+
 exports.getCssPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/css/style_index.css'));
 }
