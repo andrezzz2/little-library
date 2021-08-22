@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/insert_livro.css">
+    <title>Inserção de Livros</title>
+</head>
+
+<body>
+    <section id="header">
+        <nav id="navmenu" class="navbar navbar-expand-lg fixed-top">
+            <div class="container container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img id="logo" src="logo.png" alt="">
+                </a>
+                <button id="navegationb" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavThis" aria-controls="navbarNavThis" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavThis">
+                    <div id="navitens" class="container">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a id="linkf" class="nav-link" href="#">
+                                    <h6><i class="fas fa-atlas"></i> Acervo</h6>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="links" class="nav-link" href="#"> 
+                                    <h6><i class="fas fa-users"></i> Grupos</h6>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="linkt" class="nav-link" href="#">
+                                    <h6><i class="fas fa-hand-holding"></i> Empréstimos</h6>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="linkfo" class="nav-link" href="#">
+                                    <h6><i class="fas fa-info-circle"></i> Avisos <br/>e Suporte</h6>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>   
+
+                </div>
+
+            </div>
+        </nav>
+    </section>
+    <section id="search-field">
+        <div class="descricao">
+            <h3>Página de Remoção</h3>
+            <h5>Digite o ISBN do livro que você deseja remover</h5>
+        </div>
+        <div class="area-busca">
+            <div class="temp">
+                <form class="row g-3">
+                    <div class="col-md-12">
+                      <label for="inputname" class="form-label">ISBN do Livro</label>
+                      <input type="text" class="form-control" id="inputname">
+                    </div>  
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                          Check me out
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Deletar</button>
+                    </div>
+                  </form>
+            </div>      
+        </div>      
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d7572542b8.js" crossorigin="anonymous"></script>
+</body>
+
+<footer>
+    <h5>Desenvolvido por amantes de leitura!</h5>
+</footer>
+
+</html>
