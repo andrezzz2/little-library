@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>biblioteca teca</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style_index.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <section id="header" >
+        <nav id="navmenu" class="navbar navbar-expand-lg" >
+            <div class="container container-fluid">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button id="navegationb" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavThis" aria-controls="navbarNavThis" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavThis">
+                    <div id="navitens" class="container">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a id="linkf" class="nav-link" href="/acervo">
+                                    <h6><i class="fas fa-atlas"></i> Acervo</h6>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="links" class="nav-link" href="/groups"> 
+                                    <h6><i class="fas fa-users"></i> Grupos</h6>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="linkt" class="nav-link" href="/emprestimos">
+                                    <h6><i class="fas fa-hand-holding"></i> Empréstimos</h6>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="linkfo" class="nav-link" href="/avisos">
+                                    <h6><i class="fas fa-info-circle"></i> Avisos <br/>e Suporte</h6>
+                                </a>
+                            </li>
+                            <div class="gerenciarLivros"></div>
+                            <script type="text/babel" src="/gerenciarLivros.js"></script>
+                        </ul>
+                    </div>   
+
+                    <div class="loginOrConfigs"></div>
+                    <script type="text/babel" src="/loginOrConfigs.js"></script>
+                    
+                </div>
+
+            </div>
+        </nav>
+    </section>
+    
+    <section id="content">
+        <section id="Resume">
+            <div class="container container-fluid">
+                <div class="row">    
+                    <center><h1>Livro 1</h1></center>
+                    <div class="col-lg-6">
+                    </div>    
+                </div>    
+            </div>    
+        </section>
+        <section id="Events">
+            <div class="container container-fluid">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="" src="img/capa-livro.jpg" alt="imagem eventos">
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <center><h3>Sinopse</h3></center>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nunc eros, luctus vel erat et, blandit ullamcorper dolor. 
+                                Donec semper sed velit id malesuada. Donec congue metus ac lorem vehicula malesuada. Nullam lectus nulla, rutrum quis 
+                                arcu vel, vehicula pulvinar magna. Aenean eu lacinia magna. Pellentesque quis faucibus mi, quis luctus ligula. Ut id 
+                                euismod nisl. Nam ultricies condimentum sem, tincidunt vestibulum ipsum tincidunt laoreet. Ut erat arcu, consectetur 
+                                non urna et, porta dapibus nibh. Proin sed eleifend sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+                                Vestibulum sit amet commodo arcu. Duis mollis sem ut mauris consectetur, porta lobortis eros laoreet.</p>
+                            <p>Suspendisse interdum nibh ut nulla posuere, at viverra mi pretium. Nam dui ligula, consectetur at est in, gravida rutrum 
+                                erat. Praesent ut vestibulum lectus. Morbi at hendrerit enim, vitae finibus ante. Cras nunc metus, dictum at ex ac, tincidunt 
+                                aliquet dui. Donec convallis, lectus vel laoreet sollicitudin, leo lectus suscipit risus, non sollicitudin nisi ex quis eros. 
+                                Phasellus bibendum ipsum sit amet arcu sagittis, non varius metus rhoncus. Integer vestibulum varius tellus et vestibulum.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <center><h3>Detalhes do Produto</h3></center>
+                            <center><table>
+                                <tr>
+                                    <td><b>Editora:</b></td>
+                                    <td>XXXX</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Edicao:</b></td>
+                                    <td>XXXX</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Idioma:</b></td>
+                                    <td>XXXX</td>
+                                </tr>
+                                <tr>
+                                    <td><b>ISBN:</b></td>
+                                    <td>XXXX</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Numero de Paginas:</b></td>
+                                    <td>XXXX</td>
+                                </tr>
+                            </table></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+    </section>    
+
+</body>
+
+<footer>
+    <h5>Desenvolvido por amantes de leitura!</h5>
+</footer>
+
+</html>
