@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*CSS pela tag*/
+
+body{
+    background-image: linear-gradient( #000938, #494949);
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav ul li{
+    padding: 0px 20px 0px 20px;
+}
+
+nav #navitens ul li a:hover{
+    background: black;
+    opacity: 0.8;
+    height: 110px;
+    padding: 50px;
+}
+
+nav i{
+    color:gray;
+}
+
+nav ul li a:hover i{
+    color:lightgreen;
+}
+
+h6{
+    color:mintcream;
+
+}
+
+section{
+    color:aliceblue;
+}
+
+p{
+    text-align: justify;
+}
+
+footer{
+    background-color: #1c1c1c;
+    margin-top: 20px;
+}
+
+footer h5{
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h5{
+    padding-bottom: 40px;
+}
+
+#header{
+    text-align: center;
+}
+
+.dropdown button{
+    margin-right: 170px;
+}
+
+#search-field{
+    padding: 170px 120px 0 120px;
+}
+
+.area-busca{
+    padding: 10px 20px 0 20px;
+    background: rgba(0,0,0,0.8);
+    height: 400px;
+}
+
+#navmenu{
+    background:rgba(0,0,0,0.6);
+    height: 110px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
