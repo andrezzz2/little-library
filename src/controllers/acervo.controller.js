@@ -11,8 +11,7 @@ exports.getCssPage = (req, res) => {
 }
 
 exports.getBookById = (req, res) => {
-    const id  = req.params.id;
-    Book.findByPk(id).then(book => {         //procurar pelo id do link
+    Book.findOne({ where: { isbn: req.params.id, numero_serie: req.params.ns } }).then(book => {         //procurar pelo isbn e numero de serie do link
         if(book) {
             return res.sendFile(path.join(__dirname + '/../pages/livro.html'));
         }
