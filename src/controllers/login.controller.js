@@ -18,7 +18,7 @@ exports.login = (req, res) => {
                     res.cookie('userType', "Bibliotecario", { httpOnly: false , expires: new Date(Date.now() + 1 * 3600000)} );
                 else
                     res.cookie('userType', "Usuario", { httpOnly: false , expires: new Date(Date.now() + 1 * 3600000)} );
-                res.end("<head><meta http-equiv='refresh' content='1;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Login feito com sucesso!</body>");
+                res.redirect('http://localhost:3000');
             }
             else{
                 res.status(401).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/login'/><title>Redirect Page</title></head><body>E-mail ou Senha errada.</body>");
