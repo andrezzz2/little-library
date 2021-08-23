@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('./');
 
 const Book = sequelize.define('Book', {
-  isbn: {type: DataTypes.INTEGER, primaryKey: true},
+  isbn: {type: DataTypes.INTEGER},
   titulo: {type:DataTypes.STRING},
   numero_serie: {type:DataTypes.INTEGER}
 }, {
