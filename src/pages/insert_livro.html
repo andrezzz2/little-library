@@ -63,26 +63,26 @@
         </div>
         <div class="area-busca">
             <div class="temp">
-                <form class="row g-3">
+                <form class="row g-3" action="/gerenciarLivro/inserir" method="post">
                     <div class="col-md-8">
                       <label for="inputname" class="form-label">Nome do Livro</label>
-                      <input type="text" class="form-control" id="inputname">
+                      <input type="text" class="form-control" id="titulo" name="titulo">
                     </div>
                     <div class="col-md-4">
                       <label for="inputautor" class="form-label">Nome do autor</label>
-                      <input type="text" class="form-control" id="inputautor">
+                      <input type="text" class="form-control" id="inputautor" name="inputautor">
                     </div>
                     <div class="col-12">
                       <label for="input" class="form-label">Dados extras</label>
-                      <input type="text" class="form-control" id="inputAddress">
+                      <input type="text" class="form-control" id="inputAddress" name="inputAddress">
                     </div>
                     <div class="col-md-6">
                       <label for="inputCity" class="form-label">Categorias</label>
-                      <input type="text" class="form-control" id="inputCity">
+                      <input type="text" class="form-control" id="inputCity" name="inputCity">
                     </div>
                     <div class="col-md-4">
                       <label for="inputState" class="form-label">É uma saga?</label>
-                      <select id="inputState" class="form-select">
+                      <select id="inputState" name="inputState" class="form-select">
                         <option selected>Escolha uma opção</option>
                         <option>Sim</option>
                         <option>Não</option>
@@ -90,15 +90,11 @@
                     </div>
                     <div class="col-md-2">
                       <label for="inputZip" class="form-label">ISBN</label>
-                      <input type="text" class="form-control" id="inputZip">
+                      <input type="text" class="form-control" id="isbn" name="isbn">
                     </div>
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                          Check me out
-                        </label>
-                      </div>
+                    <div class="col-md-6">
+                      <label for="inputZip" class="form-label">N° de Série</label>
+                      <input type="text" class="form-control" id="numero_serie" name="numero_serie">
                     </div>
                     <div class="col-12">
                       <button type="submit" class="btn btn-primary">Inserir</button>
