@@ -20,7 +20,7 @@ function Configs(props) {
                 <li><a className="dropdown-item" href="#">Meu Perfil</a></li>
                 <li><a className="dropdown-item" href="#">Notificações</a></li>
                 <li><hr className="dropdown-divider"/></li>
-                <li><a className="dropdown-item" href="#">Sair</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/logout">Sair</a></li>
             </ul>
         </div>
     );

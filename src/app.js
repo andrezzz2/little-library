@@ -30,6 +30,7 @@ require("./routes/groups.routes")(app)
 require("./routes/emprestimos.routes")(app)
 require("./routes/avisos.routes")(app)
 require("./routes/gerencia.routes")(app)
+require("./routes/logout.routes")(app)
 
 require("./routes/book.routes")(app)
 
