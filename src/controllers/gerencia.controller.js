@@ -29,8 +29,15 @@ exports.InsertBook = (req, res) => {
             throw new RequiredFieldException('sem ' + field);
           }
         })
-        Book.create(req.body).then(book => {  
-            res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/inserir'/><title>Redirect Page</title></head><body>Livro inserido com sucesso!</body>");
+        Book.findOne({ where: { isbn: req.body.isbn, numero_serie: req.body.numero_serie } }).then(book =>{
+            if (book==null){
+                Book.create(req.body).then(book => {  
+                    res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/inserir'/><title>Redirect Page</title></head><body>Livro inserido com sucesso!</body>");
+                });
+            }
+            else{
+                res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/inserir'/><title>Redirect Page</title></head><body>Livro já inserido!</body>");
+            }
         });
     } catch (error) {
         if (error instanceof RequiredFieldException) {
