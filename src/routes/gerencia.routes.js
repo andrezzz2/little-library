@@ -7,7 +7,9 @@ module.exports = app => {
     router.get('/inserir', gerencia.getInsertPage);
     router.post('/inserir', gerencia.InsertBook);
     router.get('/inserir/insert_livro.css', gerencia.getInsertCssPage);
+
     router.get('/deletar', gerencia.getDeletePage);
+    router.post('/deletar', gerencia.DeleteBook);
     router.get('/deletar/insert_livro.css', gerencia.getInsertCssPage);
     
 

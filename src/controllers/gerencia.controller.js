@@ -44,6 +44,20 @@ exports.getDeletePage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/delete_livro.html'));
 }
 
+exports.DeleteBook = (req, res) => {
+    Book.findOne({ where: { isbn: req.body.isbn, numero_serie: req.body.numero_serie } }).then(book =>{
+        if (book==null){
+            res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/deletar'/><title>Redirect Page</title></head><body>Livro não encontrado!</body>");
+        }
+        else{
+            Book.destroy({ where: { isbn: req.body.isbn, numero_serie: req.body.numero_serie } }).then(book =>{
+                res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/deletar'/><title>Redirect Page</title></head><body>Livro deletado com sucesso!</body>");
+            });
+        }
+    });
+
+}
+
 exports.getInsertCssPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/css/insert_livro.css'));
 }
