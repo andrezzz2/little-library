@@ -8,18 +8,6 @@ app.use(cookieParser());
 const sequelize = require('./models/index.js'); 
 sequelize.sync().then();
 
-
-//criando arquivo com lista de todos os livros
-const Book = require('./models/book.js');                  
-const fs = require('fs');
-Book.findAll().then(books =>{
-  var texto = JSON.stringify(books);
-  texto = 'var data =  {"data" : ' + texto + '}';
-  fs.writeFile('data.js', texto, (err) => {
-      if (err) throw err;
-  });
-});
-
 const port = 3000
 
 require("./routes/index.routes")(app)

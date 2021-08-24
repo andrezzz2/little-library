@@ -5,7 +5,11 @@ module.exports = app => {
     router.get('/acervo.css', acervo.getCssPage);
     router.get('/acervo.js', acervo.getJsPage);
     router.get('/data.js', acervo.getJsonData);
-    router.get('/:id&:ns', acervo.getBookById);
+
+    router.get('/livro.js', acervo.getJsBook);
+    router.get('/livro/data.js', acervo.getBookJsonData);
+    router.get('/:id', acervo.getBookById);
+    
 
     app.use('/acervo', router);
 }
