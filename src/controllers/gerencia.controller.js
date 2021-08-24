@@ -31,6 +31,7 @@ exports.InsertBook = (req, res) => {
         })
         Book.findOne({ where: { isbn: req.body.isbn, numero_serie: req.body.numero_serie } }).then(book =>{
             if (book==null){
+                req.body.disponivel = 1;
                 Book.create(req.body).then(book => {  
                     res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/inserir'/><title>Redirect Page</title></head><body>Livro inserido com sucesso!</body>");
                 });
