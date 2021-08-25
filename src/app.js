@@ -7,6 +7,7 @@ app.use(cookieParser());
 
 const sequelize = require('./models/index.js'); 
 sequelize.sync().then();
+//sequelize.sync({force: true}).then(); //somente se quiser zerar o BD, se for o caso descomentar a criaçao de bibliotecario padrao
 
 const port = 3000;
 
