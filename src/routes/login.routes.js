@@ -5,7 +5,7 @@ module.exports = app => {
 
     router.get('/', notLoggedIn, login.getLoginPage);
     router.get('/style2.css', login.getCssLoginPage);
-    router.post('/', login.login);
+    router.post('/',notLoggedIn, login.login);
 
     app.use('/login', router);
   }
