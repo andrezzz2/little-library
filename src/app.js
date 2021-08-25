@@ -27,8 +27,6 @@ require("./routes/avisos.routes")(app)
 require("./routes/gerencia.routes")(app)
 require("./routes/logout.routes")(app)
 
-require("./routes/book.routes")(app)
-
 app.listen(port, () => {
   console.log("app is running on http://localhost:",port);
 });
