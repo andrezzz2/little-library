@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/insert_livro.css">
+    <link rel="stylesheet" type="text/css" href="/gerenciarLivro/emprestar/insert_livro.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>Inserção de Livros</title>
 </head>
 
@@ -37,6 +40,8 @@
                                     <h6><i class="fas fa-hand-holding"></i> Empréstimos</h6>
                                 </a>
                             </li>
+                            <div class="gerenciarLivros"></div>
+                            <script type="text/babel" src="/gerenciarLivros.js"></script>
                             <li class="nav-item">
                                 <a id="linkfo" class="nav-link" href="#">
                                     <h6><i class="fas fa-info-circle"></i> Avisos <br/>e Suporte</h6>
@@ -44,7 +49,8 @@
                             </li>
                         </ul>
                     </div>   
-
+                    <div class="loginOrConfigs"></div>
+                    <script type="text/babel" src="/loginOrConfigs.js"></script>
                 </div>
 
             </div>
@@ -52,47 +58,27 @@
     </section>
     <section id="search-field">
         <div class="descricao">
-            <h3>Página de  Inserção</h3>
-            <h5>Preencha o formulário abaixo para inserir um livro no acervo</h5>
+            <h3>Página de inserir empréstimo</h3>
+            <h5>Preencha o formulário abaixo para inserir um empréstimo no BD</h5>
         </div>
         <div class="area-busca">
             <div class="temp">
-                <form class="row g-3">
-                    <div class="col-md-8">
-                      <label for="inputname" class="form-label">Nome do Livro</label>
-                      <input type="text" class="form-control" id="inputname">
-                    </div>
-                    <div class="col-md-4">
-                      <label for="inputautor" class="form-label">Nome do autor</label>
-                      <input type="text" class="form-control" id="inputautor">
-                    </div>
+                <form class="row g-3" action="/gerenciarLivro/Emprestar" method="post">
                     <div class="col-8">
                       <label for="input" class="form-label">Email do usuário</label>
-                      <input type="text" class="form-control" id="inputAddress">
+                      <input type="text" class="form-control" id="email" name="email">
                     </div>
                     <div class="col-4">
                         <label for="input" class="form-label">Senha do usuário</label>
-                        <input type="password" class="form-control" id="inputAddress">
+                        <input type="password" class="form-control" id="password" name="password">
                       </div>
-                    <div class="col-md-6">
-                      <label for="inputCity" class="form-label">Nome do usuário</label>
-                      <input type="text" class="form-control" id="inputCity">
-                    </div>
                     <div class="col-md-4">
                       <label for="inputState" class="form-label">Número de série</label>
-                      <input type="text" class="form-control" id="inputCity">
+                      <input type="text" class="form-control" id="numero_serie" name="numero_serie">
                     </div>
                     <div class="col-md-2">
                       <label for="inputZip" class="form-label">ISBN</label>
-                      <input type="text" class="form-control" id="inputZip">
-                    </div>
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                          Check me out
-                        </label>
-                      </div>
+                      <input type="text" class="form-control" id="isbn" name="isbn">
                     </div>
                     <div class="col-12">
                       <button type="submit" class="btn btn-primary">Cadastrar</button>

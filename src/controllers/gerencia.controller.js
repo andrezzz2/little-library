@@ -1,4 +1,5 @@
 const Book  = require('../models/book.js');
+const User  = require('../models/user.js');
 const path = require('path');
 
 var required_fields = ["isbn", "titulo", "numero_serie"]
@@ -68,4 +69,21 @@ exports.DeleteBook = (req, res) => {
 
 exports.getInsertCssPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/css/insert_livro.css'));
+}
+
+
+
+
+exports.getEmprestimoPage = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/inserir_emprestimo.html'));
+}
+
+exports.EmprestarLivro = (req, res) => {
+    //checar se email existe
+    //checar se livro esta disponivel
+    //depois de cadastrar tirar disponibilidade do livro
+    res.send(req.body);
+}
+exports.getInsertCssPage = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/css/inserir_emprestimo.css'));
 }

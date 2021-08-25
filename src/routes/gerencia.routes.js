@@ -11,6 +11,11 @@ module.exports = app => {
     router.get('/deletar', gerencia.getDeletePage);
     router.post('/deletar', gerencia.DeleteBook);
     router.get('/deletar/insert_livro.css', gerencia.getInsertCssPage);
+
+    router.get('/emprestar', gerencia.getEmprestimoPage);
+    router.post('/emprestar', gerencia.EmprestarLivro);
+    router.get('/emprestar/insert_livro.css', gerencia.getInsertCssPage);
+
     
 
     app.use('/gerenciarLivro', router);
