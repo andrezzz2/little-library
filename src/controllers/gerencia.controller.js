@@ -91,6 +91,7 @@ exports.EmprestarLivro = (req, res) => {
                     }
                     else{
                         if(book.disponivel == 1){
+                            req.body.titulo = book.titulo;
                             Emprestimo.create(req.body).then(emprestimo => { 
                                 book.disponivel = 0;
                                 book.save();
