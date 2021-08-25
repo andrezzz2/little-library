@@ -10,7 +10,7 @@ exports.login = (req, res) => {
             res.status(401).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/login'/><title>Redirect Page</title></head><body>E-mail ou Senha errada.</body>");
         }else{
             if(req.body.password == user.password){
-                const payload = { "email":req.body.email } //deveria ser id do usuario do banco de dados
+                const payload = { "email":user.email, "userType":user.userType } //deveria ser id do usuario do banco de dados
                 const accessToken = jwt.sign(payload, ACCESS_TOKEN_SECRET);
                 res.cookie('token', accessToken, { httpOnly: true , expires: new Date(Date.now() + 1 * 3600000)} ); //token expira em 1 hora
                 res.cookie('username', user.username, { httpOnly: false , expires: new Date(Date.now() + 1 * 3600000)} );

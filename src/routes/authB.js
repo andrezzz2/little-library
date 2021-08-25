@@ -20,8 +20,11 @@ module.exports = (req, res, next) => {
                     res.clearCookie('username', { path: '/' })
                     res.clearCookie('userType', { path: '/' })
                     return res.status(201).send("<head><meta http-equiv='refresh' content='0;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Redirecting...</body>");
-                }else{                                //se tem token e email certo, da acesso
-                    return next();
+                }else{                                //se tem token e email certo
+                    if(payload.userType==1){       //se é usuario comum
+                        return res.status(201).send("<head><meta http-equiv='refresh' content='0;url=http://localhost:3000/'/><title>Redirect Page</title></head><body>Redirecting...</body>");
+                    }
+                    else{return next();}
                 }  
             }).catch(() => {
                 res.status(500).send("Falha ao buscar.");

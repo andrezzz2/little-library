@@ -24,12 +24,10 @@ if(cookies.length==0){
                 .split('; ')
                 .find(row => row.startsWith('userType='))
                 .split('=')[1];
-    /*
+    
     if(userType == "Bibliotecario")
         ReactDOM.render(<GerenciarLivros/>, document.querySelector('.gerenciarLivros'));
     else
         ReactDOM.render(<Nothing/>, document.querySelector('.gerenciarLivros'));
-    */
-    ReactDOM.render(<GerenciarLivros/>, document.querySelector('.gerenciarLivros'));
 }
 

@@ -1,5 +1,6 @@
 module.exports = app => {
     const gerencia = require("../controllers/gerencia.controller.js");
+    const authB = require("./authB.js");
     var router = require("express").Router();
     router.get('/', gerencia.getPage);
     router.get('/gerencia_livro.css', gerencia.getCssPage);
@@ -21,5 +22,5 @@ module.exports = app => {
     router.get('/devolver/insert_livro.css', gerencia.getInsertCssPage);
     
 
-    app.use('/gerenciarLivro', router);
+    app.use('/gerenciarLivro', authB, router);
 }

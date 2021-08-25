@@ -1,6 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const app = express()
+const app = express();
 app.use(express.urlencoded());
 app.use(express.json()); 
 app.use(cookieParser());
@@ -8,7 +8,13 @@ app.use(cookieParser());
 const sequelize = require('./models/index.js'); 
 sequelize.sync().then();
 
-const port = 3000
+const port = 3000;
+
+//criando bibliotecário padrão
+//const User = require('./models/user.js');
+//var adm = {username: "adm", email: "adm@adm", password: "adm", userType: 0};
+//User.create(adm);
+
 
 require("./routes/index.routes")(app)
 require("./routes/login.routes")(app)
