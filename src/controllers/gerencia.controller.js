@@ -1,5 +1,6 @@
 const Book  = require('../models/book.js');
 const User  = require('../models/user.js');
+const Emprestimo  = require('../models/emprestimo.js');
 const path = require('path');
 
 var required_fields = ["isbn", "titulo", "numero_serie"]
@@ -79,10 +80,36 @@ exports.getEmprestimoPage = (req, res) => {
 }
 
 exports.EmprestarLivro = (req, res) => {
-    //checar se email existe
-    //checar se livro esta disponivel
-    //depois de cadastrar tirar disponibilidade do livro
-    res.send(req.body);
+    User.findByPk(req.body.email).then(user => {         //procurar pelo id do link
+        if(user == null) {   
+            res.status(401).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/Emprestar'/><title>Redirect Page</title></head><body>E-mail não cadastrado.</body>");
+        }else{
+            if(req.body.password == user.password){
+                Book.findOne({ where: { isbn: req.body.isbn, numero_serie: req.body.numero_serie } }).then(book =>{
+                    if (book==null){
+                        res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/Emprestar'/><title>Redirect Page</title></head><body>Livro não encontrado!</body>");
+                    }
+                    else{
+                        if(book.disponivel == 1){
+                            Emprestimo.create(req.body).then(emprestimo => { 
+                                book.disponivel = 0;
+                                book.save();
+                                res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/Emprestar'/><title>Redirect Page</title></head><body>Empréstimo inserido com sucesso!</body>");
+                            });
+                        }
+                        else{
+                            res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/Emprestar'/><title>Redirect Page</title></head><body>Livro já emprestado!</body>");
+                        }
+                    }
+                });
+            }
+            else{
+                res.status(401).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/Emprestar'/><title>Redirect Page</title></head><body>Senha errada.</body>");
+            }
+        }
+    }).catch(() => {
+        res.status(500).send("Falha ao buscar.")
+    });
 }
 exports.getInsertCssPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/css/inserir_emprestimo.css'));
