@@ -114,3 +114,22 @@ exports.EmprestarLivro = (req, res) => {
 exports.getInsertCssPage = (req, res) => {
     res.sendFile(path.join(__dirname + '/../pages/css/inserir_emprestimo.css'));
 }
+
+exports.getDevolucaoPage = (req, res) => {
+    res.sendFile(path.join(__dirname + '/../pages/devolver_emprestimo.html'));
+}
+
+exports.DevolverLivro = (req, res) => {
+    Book.findOne({ where: { isbn: req.body.isbn, numero_serie: req.body.numero_serie } }).then(book =>{
+        if (book==null){
+            res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/devolver'/><title>Redirect Page</title></head><body>Livro não existente!</body>");
+        }
+        else{
+            book.disponivel = 1;
+            book.save();
+            Emprestimo.destroy({ where: { isbn: req.body.isbn, numero_serie: req.body.numero_serie } }).then(book =>{
+                res.status(201).send("<head><meta http-equiv='refresh' content='2;url=http://localhost:3000/gerenciarLivro/devolver'/><title>Redirect Page</title></head><body>Devolução registrada com sucesso!</body>");
+            });
+        }
+    });
+}

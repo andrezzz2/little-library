@@ -16,6 +16,9 @@ module.exports = app => {
     router.post('/emprestar', gerencia.EmprestarLivro);
     router.get('/emprestar/insert_livro.css', gerencia.getInsertCssPage);
 
+    router.get('/devolver', gerencia.getDevolucaoPage);
+    router.post('/devolver', gerencia.DevolverLivro);
+    router.get('/devolver/insert_livro.css', gerencia.getInsertCssPage);
     
 
     app.use('/gerenciarLivro', router);
