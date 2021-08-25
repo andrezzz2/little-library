@@ -14,5 +14,5 @@ Run:
 
 Run the node server on localhost:3000.
 
-http://localhost:3000/book
+http://localhost:3000/
 
